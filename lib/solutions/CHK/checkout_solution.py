@@ -25,6 +25,7 @@ def checkout(skus: str) -> int:
         hash_map["B"]["count"] = separated.count("B")
         hash_map["C"]["count"] = separated.count("C")
         hash_map["D"]["count"] = separated.count("D")
+        hash_map["E"]["count"] = separated.count("E")
         total = 0
         if separated.count("A") % 5 == 0:
             hash_map["A"]["special_count"] = int(separated.count("A")/5)
@@ -35,13 +36,11 @@ def checkout(skus: str) -> int:
             hash_map["A"]["special_price"] = 200
             hash_map["A"]["count"] = 0
             total += 130
-        
-        if separated.count("A") % 3 == 0:
-            hash_map["A"]["special_count"] = int(separated.count("A")/3)
-            hash_map["A"]["count"] = 0
-        elif separated.count("A") % 3 == 1 or separated.count("A") % 3 == 2:
-            hash_map["A"]["count"] = separated.count("A") % 3
-            hash_map["A"]["special_count"] = int((separated.count("A") - separated.count("A") % 3)/3)
+        elif separated.count("A") % 5 == 1 or separated.count("A") % 5 == 2 or separated.count("A") % 4 == 4:
+            hash_map["A"]["special_count"] = int((separated.count("A") - separated.count("A") % 5)/5)
+            hash_map["A"]["special_price"] = 200
+            hash_map["A"]["count"] = separated.count("A") % 5
+
         if separated.count("B") % 2 == 0:
             hash_map["B"]["special_count"] = int(separated.count("B")/2)
             hash_map["B"]["count"] = 0
@@ -49,6 +48,7 @@ def checkout(skus: str) -> int:
             hash_map["B"]["count"] = separated.count("B") % 2
             hash_map["B"]["special_count"] = int((separated.count("B") - separated.count("B") % 2)/2)
             
+        if separ
         for key, value in hash_map.items():
             total += (value["count"] * value["price"]) + (value["special_count"] * value["special_price"])
             
@@ -56,4 +56,5 @@ def checkout(skus: str) -> int:
             
             
             
+
 
