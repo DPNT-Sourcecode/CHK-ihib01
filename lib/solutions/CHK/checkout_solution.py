@@ -15,7 +15,7 @@ def checkout(skus: str) -> int:
             "D": {"count": 0, "price": 15}   
         }
         for sku in skus:
-            if not sku.isalpha() and sku.isupper():
+            if not sku.isalpha() or not sku.isupper():
                 return -1
             else:
                 hash_map[sku]["count"] += 1
@@ -29,6 +29,7 @@ def checkout(skus: str) -> int:
         return total
             
             
+
 
 
 
