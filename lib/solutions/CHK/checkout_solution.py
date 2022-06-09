@@ -19,12 +19,12 @@ def checkout(skus: str) -> int:
                 return -1
             else:
                 if hash_map[sku] == "A" and hash_map[sku]["count"] == 3:
+                    hash_map[sku]["count"] = 0
                     hash_map[sku]["special_count"] += 1
-                    hash_map[sku]["count"] = 0
                 elif hash_map[sku] == "B" and hash_map[sku]["count"] == 2:
-                    hash_map[sku]["special_count"] += 1 
                     hash_map[sku]["count"] = 0
-                
+                    hash_map[sku]["special_count"] += 1 
+                else:
                     hash_map[sku]["count"] += 1
         total = 0
         for key, value in hash_map.items():
@@ -37,6 +37,7 @@ def checkout(skus: str) -> int:
         return total
             
             
+
 
 
 
