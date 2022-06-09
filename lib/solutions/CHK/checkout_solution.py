@@ -23,6 +23,8 @@ def checkout(skus: str) -> int:
         for key, value in hash_map.items():
             if key == "A" and value["count"] % 3 == 0:
                 total += value["count"]/3 * 130
+            elif key == "A" and value["count"] % 3 == int:
+                total += ((value["count"] - (value["count"]%3))/3 * 130) + (value["count"] % 3 * 50)
             elif key == "B" and value["count"] % 2 == 0:
                 total += value["count"]/2 * 45
             else:
@@ -30,5 +32,6 @@ def checkout(skus: str) -> int:
         return total
             
             
+
 
 
