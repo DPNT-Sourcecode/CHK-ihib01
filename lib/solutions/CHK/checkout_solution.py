@@ -8,7 +8,7 @@ def checkout(skus: str) -> int:
     elif type(skus) != str:
         return -1
     else:
-        list_of_skus = skus.split('')
+        list_of_skus = list(skus)
         num_of_A = list_of_skus.count("A")
         num_of_B = list_of_skus.count("B")
         num_of_C = list_of_skus.count("C")
@@ -34,6 +34,7 @@ def checkout(skus: str) -> int:
             
             
             
+
 
 
 
