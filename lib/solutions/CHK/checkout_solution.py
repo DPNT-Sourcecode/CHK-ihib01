@@ -19,15 +19,16 @@ def checkout(skus: str) -> int:
                 return -1
             hash_map[sku]["count"] += 1
         total = 0
-        for key in list(hash_map):
-            if key == "A" and key["count"] % 3 == 0:
-                total += key["count"]/3 * 130
-            elif key == "B" and key["count"] % 2 == 0:
-                total += key["count"]/2 * 45
-            total += key["count"] * key["price"]
+        for key, value in hash_map.items():
+            if key == "A" and value["count"] % 3 == 0:
+                total += value["count"]/3 * 130
+            elif key == "B" and value["count"] % 2 == 0:
+                total += value["count"]/2 * 45
+            total += value["count"] * value["price"]
         return total
             
             
+
 
 
 
