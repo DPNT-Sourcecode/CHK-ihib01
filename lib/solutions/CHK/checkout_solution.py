@@ -54,6 +54,9 @@ def checkout(skus: str) -> int:
         if separated.count("E") % 2 == 0 and separated.count("B") >= 1:
             hash_map["E"]["special_count"] = int(separated.count("E")/2)
             hash_map["E"]["special_price"] = -30
+        elif separated.count("E") % 2 == 1 and separated.count("B") >= 1:
+            hash_map["E"]["special_count"] = 1
+            hash_map["E"]["special_price"] = -30
         for key, value in hash_map.items():
             total += (value["count"] * value["price"]) + (value["special_count"] * value["special_price"])
             
@@ -61,10 +64,3 @@ def checkout(skus: str) -> int:
             
             
             
-
-
-
-
-
-
-
