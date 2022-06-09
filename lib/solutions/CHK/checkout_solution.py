@@ -29,7 +29,10 @@ def checkout(skus: str) -> int:
         if separated.count("A") % 3 == 0:
             hash_map["A"]["special_count"] = int(separated.count("A")/3)
             hash_map["A"]["count"] = 0
-        elif seperated.count
+        elif separated.count("A") % 5 == 0:
+            hash_map["A"]["special_count"] = int(separated.count("A")/5)
+            hash_map["A"]["special_price"] = 200
+            hash_map["A"]["count"] = 0
         elif separated.count("A") % 3 == 1 or separated.count("A") % 3 == 2:
             hash_map["A"]["count"] = separated.count("A") % 3
             hash_map["A"]["special_count"] = int((separated.count("A") - separated.count("A") % 3)/3)
@@ -47,6 +50,7 @@ def checkout(skus: str) -> int:
             
             
             
+
 
 
 
