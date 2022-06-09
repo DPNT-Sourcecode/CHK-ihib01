@@ -40,15 +40,15 @@ def checkout(skus: str) -> int:
             hash_map["A"]["special_count"] = int((separated.count("A") - separated.count("A") % 5)/5)
             hash_map["A"]["special_price"] = 200
             hash_map["A"]["count"] = separated.count("A") % 5
-
         if separated.count("B") % 2 == 0:
             hash_map["B"]["special_count"] = int(separated.count("B")/2)
             hash_map["B"]["count"] = 0
         elif separated.count("B") % 2 == 1:
             hash_map["B"]["count"] = separated.count("B") % 2
-            hash_map["B"]["special_count"] = int((separated.count("B") - separated.count("B") % 2)/2)
+            hash_map["B"]["special_count"] = int((separated.count("B") - separated.count("B") % 2)/2)     
+        if separated.count("E") % 2 == 0:
+            hash_map["E"]["special_count"] = int(separated.count("E")/2)
             
-        if separ
         for key, value in hash_map.items():
             total += (value["count"] * value["price"]) + (value["special_count"] * value["special_price"])
             
@@ -56,5 +56,6 @@ def checkout(skus: str) -> int:
             
             
             
+
 
 
