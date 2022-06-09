@@ -3,7 +3,8 @@
 # noinspection PyUnusedLocal
 # friend_name = unicode string
 def hello(friend_name: str) -> str:
-    return f"Hello, World!"
+    return f"Hello, {friend_name.capitalize()}!"
+
 
 
 
