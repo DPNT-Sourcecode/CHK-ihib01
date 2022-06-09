@@ -17,7 +17,8 @@ def checkout(skus: str) -> int:
         for sku in skus:
             if not sku.isalpha().isupper():
                 return -1
-            hash_map[sku]["count"] += 1
+            else:
+                hash_map[sku]["count"] += 1
         total = 0
         for key, value in hash_map.items():
             if key == "A" and value["count"] % 3 == 0:
@@ -28,6 +29,7 @@ def checkout(skus: str) -> int:
         return total
             
             
+
 
 
 
