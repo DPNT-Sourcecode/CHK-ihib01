@@ -1,9 +1,11 @@
-
+from typing import List
 
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus: str) -> int:
-    if skus != str:
+    if skus == '':
+        return 0
+    elif skus != List[str]:
         return -1
     else:
         hash_map = {
@@ -20,6 +22,7 @@ def checkout(skus: str) -> int:
         return total
             
             
+
 
 
 
