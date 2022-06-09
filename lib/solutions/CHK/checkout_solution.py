@@ -17,7 +17,8 @@ def checkout(skus: str) -> int:
             "A": {"count": 0, "price": 50, "special_count": 0, "special_price": 130},
             "B": {"count": 0, "price": 30, "special_count": 0, "special_price": 45},
             "C": {"count": 0, "price": 20, "special_count": 0, "special_price": 0},
-            "D": {"count": 0, "price": 15, "special_count": 0, "special_price": 0},   
+            "D": {"count": 0, "price": 15, "special_count": 0, "special_price": 0},
+            "E": {"count": 0, "price": 40, "special_count": 0, "special_price": -30}   
         }
      
         hash_map["A"]["count"] = separated.count("A")
@@ -28,6 +29,7 @@ def checkout(skus: str) -> int:
         if separated.count("A") % 3 == 0:
             hash_map["A"]["special_count"] = int(separated.count("A")/3)
             hash_map["A"]["count"] = 0
+        elif seperated.count
         elif separated.count("A") % 3 == 1 or separated.count("A") % 3 == 2:
             hash_map["A"]["count"] = separated.count("A") % 3
             hash_map["A"]["special_count"] = int((separated.count("A") - separated.count("A") % 3)/3)
@@ -45,6 +47,7 @@ def checkout(skus: str) -> int:
             
             
             
+
 
 
 
