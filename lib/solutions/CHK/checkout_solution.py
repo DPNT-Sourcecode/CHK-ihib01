@@ -5,6 +5,8 @@ from typing import List
 def checkout(skus: str) -> int:
     if skus == '':
         return 0
+    elif type(skus) != str:
+        return -1
     else:
         hash_map = {
             "A": {"count": 0, "price": 50},
@@ -13,7 +15,7 @@ def checkout(skus: str) -> int:
             "D": {"count": 0, "price": 15}   
         }
         for sku in skus:
-            if sku != str:
+            if not sku.isalpha():
                 return -1
             hash_map[sku] += 1
         total = 0
@@ -22,8 +24,3 @@ def checkout(skus: str) -> int:
         return total
             
             
-
-
-
-
-
