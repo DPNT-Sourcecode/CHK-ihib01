@@ -9,6 +9,9 @@ def checkout(skus: str) -> int:
         return -1
     else:
         separated = list(skus)
+        for i in separated:
+            if not i.isalpha() or not i.isupper():
+                return -1
         
         hash_map = {
             "A": {"count": 0, "price": 50, "special_count": 0, "special_price": 130},
@@ -36,8 +39,11 @@ def checkout(skus: str) -> int:
             hash_map["B"]["special_count"] = int((separated.count("B") - separated.count("B") % 2)/2)
             
         for key, value in hash_map.items():
-            total += 
+            total += (value["count"] * value["price"]) + (value["special_count"] * value["special_price"])
+            
+        return total
             
             
             
+
 
