@@ -4,4 +4,3 @@ def compute(x: int, y: int):
         raise ValueError
     else:
         return x + y
-
