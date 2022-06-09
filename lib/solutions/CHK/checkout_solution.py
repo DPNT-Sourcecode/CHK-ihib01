@@ -8,32 +8,21 @@ def checkout(skus: str) -> int:
     elif type(skus) != str:
         return -1
     else:
-        list_of_skus = list(skus)
-        num_of_A = list_of_skus.count("A")
-        num_of_B = list_of_skus.count("B")
-        num_of_C = list_of_skus.count("C")
-        num_of_D = list_of_skus.count("D")
-        total = 0
-        if num_of_A % 3 == 0:
-            special_price = num_of_A / 3 * 130
-            total += special_price + num_of_B + num_of_C + num_of_D
-        elif num_of_A % 3 == int:
-            special_price = 130 * (num_of_A - (num_of_A % 3))/3
-            total += special_price + (num_of_A % 3 * 50) + num_of_B + num_of_C + num_of_D
-        elif num_of_B % 2 == 0:
-            special_price = num_of_B / 2 * 45
-            total += special_price + num_of_A + num_of_C + num_of_D
-        elif num_of_B % 2 == int:
-            special_price = 45 * (num_of_B - (num_of_B % 2))/2
-            total += (special_price + (num_of_A % 3 * 30)) + num_of_A + num_of_C + num_of_D
+        separated = list(skus)
+        
+        hash_map = {
+            "A": {"count": 0, "price": 50, "special_count": 0},
+            "B": {"count": 0, "price": 30, "special_count": 0},
+            "C": {"count": 0, "price": 20},
+            "D": {"count": 0, "price": 15}   
+        }
+     
+        hash_map["A"]["count"] = separated.count("A")
+        hash_map["B"]["count"] = separated.count("B")
+        hash_map["C"]["count"] = separated.count("C")
+        hash_map["D"]["count"] = separated.count("D")
+            
 
-        else:
-            total += (num_of_A + num_of_B + num_of_C + num_of_D)
-            
-            
-            
-            
-            
 
 
 
