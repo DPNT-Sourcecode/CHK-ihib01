@@ -16,12 +16,24 @@ def checkout(skus: str) -> int:
         total = 0
         if num_of_A % 3 == 0:
             special_price = num_of_A / 3 * 130
-            total += special_price
+            total += special_price + num_of_B + num_of_C + num_of_D
         elif num_of_A % 3 == int:
             special_price = 130 * (num_of_A - (num_of_A % 3))/3
+            total += special_price + (num_of_A % 3 * 50) + num_of_B + num_of_C + num_of_D
+        elif num_of_B % 2 == 0:
+            special_price = num_of_B / 2 * 45
+            total += special_price + num_of_A + num_of_C + num_of_D
+        elif num_of_B % 2 == int:
+            special_price = 45 * (num_of_B - (num_of_B % 2))/2
+            total += (special_price + (num_of_A % 3 * 30)) + num_of_A + num_of_C + num_of_D
+
+        else:
+            total += (num_of_A + num_of_B + num_of_C + num_of_D)
             
             
             
             
+            
+
 
 
