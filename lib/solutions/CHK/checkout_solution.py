@@ -20,7 +20,12 @@ def checkout(skus: str) -> int:
             hash_map[sku] += 1
         total = 0
         for key in hash_map.keys():
+            if key == "A" and key["count"] % 3 == 0:
+                total += key["count"]/3 * 130
+            elif key == "B" and key["count"] % 2 == 0:
+                total += key["count"]/2 * 45
             total += key["count"] * key["price"]
         return total
             
             
+
